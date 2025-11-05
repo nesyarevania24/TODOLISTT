@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #faD0C4 0%, #FFD1FF 100%);
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.input-section {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+}
+
+#taskInput {
+    padding: 0.8rem 1rem;
+    border: none;
+    border-radius: 8px;
+    width: 60%;
+    font-size: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#addBtn {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #F06292;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#addBtn:hover {
+    background-color: #45a049;
+}
+
+.lists-container {
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+}
+
+.list-column {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.list-column h2 {
+    color: white;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.task-list {
+    min-height: 400px;
+    padding: 1rem;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.task-item {
+    background: white;
+    padding: 1rem;
+    margin-bottom: 0.8rem;
+    border-radius: 8px;
+    cursor: move;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.task-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.task-item .actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 0.5rem;
+}
+
+.task-item button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 0.3rem;
+    margin-left: 0.5rem;
+    color: #666;
+    transition: color 0.3s;
+}
+
+.task-item .delete-btn:hover {
+    color: #ff4444;
+}
+
+.task-item .edit-btn:hover {
+    color: #2196F3;
+}
+
+/* Drag and Drop styles */
+.task-item.dragging {
+    opacity: 0.5;
+}
+
+@media (max-width: 768px) {
+    .lists-container {
+        flex-direction: column;
+    }
+    
+    .list-column {
+        margin-bottom: 1rem;
+    }
+    
+    #taskInput {
+        width: 70%;
+    }
+}
